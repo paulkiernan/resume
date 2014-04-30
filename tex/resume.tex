@@ -1,0 +1,173 @@
+\RequirePackage{fix-cm}
+\RequirePackage[l2tabu, orthodox]{nag}
+\documentclass[]{resume-openfont}
+\usepackage{microtype}
+
+\begin{document}
+
+% Header
+% \lastupdated
+\namesection{}{Paul Kiernan}{
+    \urlstyle{same}\url{http://paulynomial.com} \\
+    \href{mailto:hi@paulynomial.com}{hi@paulynomial.com} \hspace{1mm}|\hspace{1mm} 646.369.6726
+}
+
+\section{Experience}
+\runsubsection{\href{http://www.reddit.com/}{Reddit Inc.\\}}
+    \descript{Staff Software Engineer}
+    \location{\hfill August 2019 - Right Meow}
+    \begin{tightemize}
+        \item
+            Global Director of Dank Memes
+    \end{tightemize}
+
+    \descript{Senior Software Engineer II}
+    \location{\hfill July 2018 - August 2019}
+    \begin{tightemize}
+        \item
+            Junior Director of Dank Memes
+    \end{tightemize}
+
+\runsubsection{\href{http://www.chartbeat.com/}{Chartbeat Inc.\\}}
+    \descript{Head of Backend Engineering}
+    \location{\hfill October 2016 – July 2018}
+    \begin{tightemize}
+        \item
+            Built "MrRoboto," a replicated C++ key-value store capable of
+            writing over 500k records/sec and computing arbitrary views,
+            defined at runtime, on stored data. Persisted data in a LMDB
+            copy-on-write b-tree that supports transactions, snapshots,
+            multiple non-blocking readers + single writer, and scales reads
+            linearly with CPU cores. Used Chain Replication to persist data
+            across nodes
+        \item
+            Built "Miata", a convenient real-time streaming analytics framework
+            for prototyping products using Chartbeat's streaming data firehose
+            using Kafka, ZeroMQ and Python
+        \item
+            Led a team of 8 backend engineers across 4 product teams. Conducted
+            weekly 1-on-1s with each team member and advised each on personal,
+            team, and project development
+        \item
+            Modernized old Nagios reporting and alerting infrastructure
+    \end{tightemize}
+    \vspace{5pt}
+
+    \descript{Backend Team Lead}
+    \location{\hfill October 2015 – October 2016}
+    \begin{tightemize}
+        \item
+            Led research and development team responsible for prototyping new
+            and experimental products. Presented research and new products to
+            the Board and communicated the progress of active experiments to
+            the company
+        \item
+            Built "Goby," a dashboard for communicating the most engaging
+            articles (by time) active within the Chartbeat news network at the
+            present moment
+        \item
+            Developed share of voice benchmarking tool to aid publishers in
+            measuring their contribution to a news topic
+        \item
+            Created real-time targeting platform for ad distributors to
+            identify and monetize articles with high engagement
+        \item
+            Implemented Robust Principal Component Analysis (RPCA) outlier
+            detection for surfacing anomalous traffic patterns in topics
+            published on the Chartbeat network
+        \item
+            Taught a recurring Python language class covering advanced features
+            of the language such as writing custom C extensions and debugging
+            workflows
+    \end{tightemize}
+    \vspace{5pt}
+
+    \descript{Backend Developer}
+    \location{\hfill August 2014 – October 2015}
+    \begin{tightemize}
+        \item
+            Open-sourced Parselmouth, an object-oriented interface for
+            abstracting away the ugly parts of ad server APIs
+        \item
+            Developed a Line Item Recommendation product that suggested new
+            impression target goals that would facilitate hitting a defined
+            engagement goal
+        \item
+            Built system for indexing screenshots of advertisement creatives
+            over time
+        \item
+            Primary backend engineer behind "Loveboat," Chartbeat Advertising's
+            V2 APIs
+    \end{tightemize}
+
+\runsubsection{\href{http://www.moat.com/}{Moat Inc. \\}}
+    \descript{Backend Developer}
+    \location{\hfill May 2012 – August 2014}
+    \begin{tightemize}
+        \item
+            Engineered a network of web crawlers capable of programmatically
+            detecting, capturing, and indexing online advertisements across
+            different geographical regions
+        \item
+            Designed ETL pipeline for aggregating warehoused index results
+        \item
+            Developed API for aggregate results and Pyramid web application for
+            serving reports to clients
+        \item
+            Implemented homebrew heterogeneous server role and configuration
+            deployment system in Amazon EC2
+    \end{tightemize}
+
+\section{Education}
+    \runsubsection{Cornell University}
+    \descript{BS in Electrical and Computer Engineering (ECE)}
+    \location{\hfill May 2012}
+    \begin{tightemize}
+    \item
+        Honors: John McMullen Dean Scholar, Goldfarb Tradition Fellow
+    \item
+        Slope Media Vice President of Production and Technology
+    \item
+        University Nanosat 6 Power Subsystem Engineer
+    \end{tightemize}
+
+\begin{minipage}[t]{0.38\textwidth}
+    \section{Programming Skills}
+    \custombold{\meow{Expert:}}
+        Python \\
+    \meow{Proficient:}
+        C++ \textbullet{}
+        C \textbullet{}
+        Java \textbullet{}
+        Clojure \textbullet{}
+        Shell\\
+        \hspace{50pt}
+        Redshift \textbullet{}
+        SQL \textbullet{}
+        Kafka\\
+    \meow{Familiar:}
+        JavaScript \textbullet{}
+        CSS \textbullet{}
+        PHP \\
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.38\textwidth}
+    \section{Interests}
+        Cooking \textbullet{}
+        Surfing \textbullet{}
+        Particle Physics \\
+        Fusion Engineering \textbullet{}
+        Miyazaki Films \\
+        Ceramics \textbullet{}
+        Aerospace Engineering \\
+        Music \textbullet{}
+        Interactive Art Projects
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.22\textwidth}
+    \section{Links}
+        Github:// \href{https://github.com/paulkiernan}{\custombold{paulkiernan}}\\
+        LinkedIn:// \href{https://www.linkedin.com/in/paulygon}{\custombold{paulygon}}\\
+        Twitter:// \href{https://twitter.com/gaelic}{\custombold{@gaelic}}\\
+\end{minipage}
+\end{document}
