@@ -19,7 +19,9 @@
 % line on which the font is used and either change it to a font included with
 % your operating system or comment the line out to use the default font.
 
+\RequirePackage[l2tabu, orthodox]{nag}
 \documentclass[]{deedy-resume-openfont}
+\usepackage{microtype}
 
 \begin{document}
 
@@ -42,46 +44,53 @@
     \sectionsep
 
     \section{Links}
-        Github:// \href{https://github.com/paulkiernan}{\bf paulkiernan} \\
-        LinkedIn://  \href{https://www.linkedin.com/pub/paul-kiernan/24/a32/470}{\bf paulkiernan} \\
-        Twitter://  \href{https://twitter.com/gaelic}{\bf @gaelic} \\
+        Github:// \href{https://github.com/paulkiernan}{\textbf paulkiernan} \\
+        LinkedIn:// \href{https://www.linkedin.com/pub/paul-kiernan/24/a32/470}{\textbf paulkiernan} \\
+        Twitter:// \href{https://twitter.com/gaelic}{\textbf @gaelic} \\
     \sectionsep
 
     \section{Coursework}
-        Advanced Machine Learning \\
-        Open Source Software Engineering \\
-        Advanced Interactive Graphics \\
-        Compilers + Practicum \\
-        Cloud Computing \\
-        Information Retrieval \\
+        Robot Learning\\
         Operating Systems \\
-        Artificial Intelligence + Practicum \\
-        Functional Programming \\
-        Computer Graphics + Practicum \\
-        {\footnotesize \textit{\textbf{(Research Asst. \& Teaching Asst) }}} \\
+        Open Source Software Engineering \\
         Unix Tools and Scripting \\
+        C ++ Programming\\
+        Computer Architecture\\
+        Digital Systems Design Using Microcontrollers\\
+        Microelectronics\\
+        Embedded Systems\\
+        Computerized Instrumentation Design\\
+        Digital Logic Design\\
+        Discrete Structures\\
+        Signals \& Systems\\
+        Probability and Inference\\
+        Lasers and Optoelectronics\\
+        Controlled Fusion\\
+        %{\footnotesize \textit{\textbf{(Research Asst. \& Teaching Asst) }}} \\
     \sectionsep
 
     \section{Skills}
         \subsection{Programming}
         \location{Over 5000 lines:}
-        Java \textbullet{}   Shell \textbullet{} JavaScript \textbullet{} Matlab \\
-        OCaml \textbullet{} Python \textbullet{} Rails \textbullet{} \LaTeX\ \\ 
+            Java \textbullet{}
+            Shell \textbullet{}
+            JavaScript \textbullet{}
+            Matlab \\
+            OCaml \textbullet{}
+            Python \textbullet{}
+            Rails \textbullet{}
+            \LaTeX\ \\
         \location{Over 1000 lines:}
-        C \textbullet{} C++ \textbullet{} CSS \textbullet{} PHP \textbullet{} Assembly \\
+            C \textbullet{}
+            C++ \textbullet{}
+            CSS \textbullet{}
+            PHP \textbullet{}
+            Assembly \\
         \location{Familiar:}
-        AS3 \textbullet{} iOS \textbullet{} Android \textbullet{} MySQL
-        \sectionsep
-
-    \section{Skills}
-        \subsection{Programming}
-        \location{Over 5000 lines:}
-        Java \textbullet{}   Shell \textbullet{} JavaScript \textbullet{} Matlab \\
-        OCaml \textbullet{} Python \textbullet{} Rails \textbullet{} \LaTeX\ \\ 
-        \location{Over 1000 lines:}
-        C \textbullet{} C++ \textbullet{} CSS \textbullet{} PHP \textbullet{} Assembly \\
-        \location{Familiar:}
-        AS3 \textbullet{} iOS \textbullet{} Android \textbullet{} MySQL
+            AS3 \textbullet{}
+            iOS \textbullet{}
+            Android \textbullet{}
+            MySQL
         \sectionsep
 
 \end{minipage}
@@ -96,7 +105,12 @@
         \location{May 2012 – Present | New York City, NY}
         \vspace{\topsep} % Hacky fix for awkward extra vertical space
         \begin{tightemize}
-            \item Worked on the YouTube Captions team in primarily vanilla Javascript and Python to plan, design and develop the full stack implementation of a new framework to add and edit Automatic Speech Recognition captions.\item Created a backbone.js-like framework for the Captions editor.\item All code was reviewed, perfected, and pushed to production.
+            \item Worked on the YouTube Captions team in primarily vanilla
+                  Javascript and Python to plan, design and develop the full
+                  stack implementation of a new framework to add and edit
+                  Automatic Speech Recognition captions.
+            \item Created a backbone.js-like framework for the Captions editor.
+            \item All code was reviewed, perfected, and pushed to production.
         \end{tightemize}
     \sectionsep
 
@@ -104,21 +118,23 @@
         \descript{| Open Source Contributor \& Team Leader}
         \location{Jan 2013 – May 2013 | Palo Alto, CA \& Ithaca, NY}
         \begin{tightemize}
-            \item Phabricator is used daily by Facebook, Dropbox, Quora, Asana and more.\item I created the Meme generator, the entire Lipsum application, ported Tokens to different apps, fixed many bugs and more in PHP and Shell.\item Led a team from MIT, Cornell, IC London and UHelsinki for the project.
+            \item Phabricator is used daily by Facebook, Dropbox, Quora, Asana and more.
+            \item I created the Meme generator, the entire Lipsum application, ported Tokens to different apps, fixed many bugs and more in PHP and Shell.
+            \item Led a team from MIT, Cornell, IC London and UHelsinki for the project.
         \end{tightemize}
     \sectionsep
 
     \section{Research}
         \runsubsection{Cornell Robot Learning Lab}
-        \descript{| Head Undergrad Research}
-        \location{Jan 2014 – Present | Ithaca, NY}
-        Worked with \textbf{\href{http://www.cs.cornell.edu/~ashesh/}{Ashesh Jain}} and \textbf{\href{http://www.cs.cornell.edu/~asaxena/}{Prof Ashutosh Saxena}} to create \textbf{PlanIt}, a tool which  learns from large scale user preference feedback to plan robot trajectories in human environments.  Publication submitted.
-    \sectionsep
+            \descript{| Head Undergrad Research}
+            \location{Jan 2014 – Present | Ithaca, NY}
+            Worked with \textbf{\href{http://www.cs.cornell.edu/~ashesh/}{Ashesh Jain}} and \textbf{\href{http://www.cs.cornell.edu/~asaxena/}{Prof Ashutosh Saxena}} to create \textbf{PlanIt}, a tool which  learns from large scale user preference feedback to plan robot trajectories in human environments.  Publication submitted.
+        \sectionsep
 
-    \runsubsection{Cornell Phonetics Lab}
-        \descript{| Head Undergraduate Researcher}
-        \location{Mar 2012 – May 2013 | Ithaca, NY}
-        Lead the development of \textbf{QuickTongue}, the first ever breakthrough tongue-controlled game with \textbf{\href{http://conf.ling.cornell.edu/~tilsen/}{Prof Sam Tilsen}} to aid in Linguistics research. Publication submitted.
+        \runsubsection{Cornell Phonetics Lab}
+            \descript{| Head Undergraduate Researcher}
+            \location{Mar 2012 – May 2013 | Ithaca, NY}
+            Lead the development of \textbf{QuickTongue}, the first ever breakthrough tongue-controlled game with \textbf{\href{http://conf.ling.cornell.edu/~tilsen/}{Prof Sam Tilsen}} to aid in Linguistics research. Publication submitted.
     \sectionsep
 
     \section{Awards}
