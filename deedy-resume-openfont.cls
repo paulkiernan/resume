@@ -34,23 +34,31 @@
 \setlength{\TPHorizModule}{1mm}
 \setlength{\TPVertModule}{1mm}
 \textblockorigin{0mm}{5mm} % start everyth
-\newcommand{\lastupdated}{\begin{textblock}{60}(165,0)
-\color{date}\fontspec[Path = fonts/raleway/]{Raleway-ExtraLight}\fontsize{8pt}{10pt}\selectfont 
-Last Updated on
-\today
-\end{textblock}}
+
+\newcommand{\lastupdated}{
+    \begin{textblock}{60}(165,0)
+        \color{date}\fontspec[Path = fonts/raleway/]{Raleway-ExtraLight}\fontsize{8pt}{10pt}\selectfont
+        Last Updated on
+        \today
+    \end{textblock}
+}
 
 % Name command
 \newcommand{\namesection}[3]{
-	\centering{
-		\sffamily
-		\fontspec[Path = fonts/lato/]{Lato-Hai}\fontsize{40pt}{10cm}\selectfont #1 
-		\fontspec[Path = fonts/lato/]{Lato-Lig}\selectfont #2
-	} \\
-	\vspace{5pt}
-	\centering{ \color{headings}\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{14pt}\selectfont #3}
-	\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
-	\vspace{-15pt}
+    \centering{
+        \sffamily
+        \fontspec[Path = fonts/lato/]{Lato-Hai}\fontsize{40pt}{10cm}\selectfont #1 
+        \fontspec[Path = fonts/lato/]{Lato-Lig}\selectfont #2
+    } \\
+    \vspace{5pt}
+    \centering{
+        \color{headings}
+        %\fontspec[Path = fonts/raleway/]{Raleway-Medium}
+        \fontsize{11pt}{14pt}
+        \selectfont #3
+    }
+    \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
+    \vspace{-15pt}
 }
 \titlespacing{\section}{0pt}{0pt}{0pt}
 
@@ -63,11 +71,17 @@ Last Updated on
 \fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase}{}{0em}{}
 \titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
 \titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
-\newcommand{\runsubsection}[1]{\color{subheadings}
-\fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase {#1} \normalfont}
+\newcommand{\runsubsection}[1]{
+    \color{subheadings}
+    \fontspec[Path = fonts/lato/]{Lato-Bol}
+    \fontsize{12pt}{12pt}
+    \selectfont\bfseries\uppercase {#1}
+    \normalfont
+}
 
 % Descriptors command
-\newcommand{\descript}[1]{\color{subheadings}\raggedright\scshape\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont {#1 \\} \normalfont}
+\newcommand{\descript}[1]{
+    \color{subheadings}\raggedright\scshape\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont {#1 \\} \normalfont}
 
 % Location command
 \newcommand{\location}[1]{\color{headings}\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{12pt}\selectfont {#1\\} \normalfont}
