@@ -109,8 +109,16 @@
 }
 
 % Section seperators command
-\newcommand{\sectionsep}[0]{\vspace{8pt}}
+\newcommand{\sectionsep}[0]{
+    \vspace{8pt}
+}
 
 % Bullet Lists with fewer gaps command
-\newenvironment{tightemize}{\vspace{-\topsep}\begin{itemize}\itemsep1pt \parskip0pt \parsep0pt}{\end{itemize}\vspace{-\topsep}}
+\newenvironment{tightemize}{
+    \vspace{-\topsep}
+    \begin{itemize}
+    \itemsep1pt
+    \parskip0pt
+    \parsep0pt
+    }{\end{itemize}\vspace{-\topsep}}
 
