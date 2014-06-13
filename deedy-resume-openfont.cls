@@ -103,7 +103,7 @@
     \color{headings}
     \raggedright
     \fontspec[Path = fonts/raleway/]{Raleway-Medium}
-    \fontsize{9pt}{12pt}
+    \fontsize{10pt}{12pt}
     \selectfont {#1}
     \normalfont
 }
