@@ -9,7 +9,7 @@
 \LoadClass{article}
 
 % Package Imports
-\usepackage[hmargin=1.25cm, vmargin=0.7cm]{geometry}
+\usepackage[hmargin=1in, vmargin=0.7cm]{geometry}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{hyperref}
 \usepackage{titlesec}
@@ -120,5 +120,5 @@
     \itemsep1pt
     \parskip0pt
     \parsep0pt
-    }{\end{itemize}\vspace{-\topsep}}
+}{\end{itemize}\vspace{-\topsep}}
 

@@ -15,3 +15,6 @@ cleanall:
 
 resume: resume.tex
 	$(TEX) resume.tex
+
+cover: spotify_cover_letter.tex
+	$(TEX) spotify_cover_letter.tex
