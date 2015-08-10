@@ -1,3 +1,6 @@
+%&program=xelatex
+%&encoding=UTF-8 Unicode
+
 % Intro Options
 \ProvidesClass{deedy-resume-openfont}[2014/04/30 CV class]
 \NeedsTeXFormat{LaTeX2e}
@@ -9,14 +12,15 @@
 \LoadClass{article}
 
 % Package Imports
-\usepackage[hmargin=1in, vmargin=0.7cm]{geometry}
+\usepackage[hmargin=0.7in, vmargin=0.7cm]{geometry}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{hyperref}
 \usepackage{titlesec}
 \usepackage[absolute]{textpos}
 \usepackage[UKenglish]{babel}
 \usepackage[UKenglish]{isodate}
-\usepackage{fontspec,xltxtra,xunicode}
+\usepackage[no-math]{fontspec}
+\usepackage{xltxtra,xunicode}
 
 % Color definitions
 \definecolor{date}{HTML}{666666} 
