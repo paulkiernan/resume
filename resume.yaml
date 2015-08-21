@@ -1,0 +1,122 @@
+--- # Paul Kiernan Resume Content
+
+name: Paul Kiernan
+website:  http://paulynomial.com
+email: hi@paulynomial.com
+phone: +1 (646) 369-6726
+
+education:
+  - school-name: Cornell University
+    graduation-date: May 2012
+    description: BS in Electrical and Computer Engineering
+    details:
+      - Double Concentration in Electrical Engineering and Computer Science
+      - John McMullen Dean Scholar & Goldfarb Tradition Fellow"
+
+experience:
+  - employer-name: Chartbeat Inc.
+    employer-website: http://www.chartbeat.com/
+    title: Software Developer
+    period-of-employment:
+      start: !!timestamp 2014-08-01
+      end: Present
+    details:
+      - Ad Refresh Technical Team Lead
+      - Rosetta Stone (DFP translation)
+      - Redshift workers and stuff
+      - >
+          Teaching non-technical members of the company programming through the 
+          "Learn Python the Hard Way" online curriculum
+  - employer-name: Moat Inc.
+    employer-website: http://www.moat.com/
+    title: Software Developer
+    period-of-employment:
+      start: !!timestamp 2012-05-01
+      end: !!timestamp 2014-08-01
+    details:
+      - >
+          One of three engineers responsible for the development of the
+          full-stack behind Moat Pro, an enterprise ad-intelligence platform
+          that allows clients to research trends in the online advertising
+          industry
+      - >
+          Engineered a network of web crawlers capable of programmatically
+          detecting, capturing, and indexing online advertisements across
+          different geographical regions
+      - >
+          Designed ETL pipeline for aggregating warehoused index results
+      - >
+          Developed API for aggregate results and Pyramid web application for
+          serving reports to clients
+      - >
+          Developed global navigation autocomplete service for web application
+      - >
+          Created Pyramid middleware for logging user engagement with webapp and
+          real-time analytics application for building reports on usage patterns
+          and behaviour
+      - >
+          Encouraged testing and installed a Jenkins continuous integration
+          server for detecting regressions
+      - >
+          Implemented homebrew heterogeneous server role and configuration
+          deployment system in Amazon’s EC2
+  - employer-name: Cornell Laboratory for Elementary-Particle Physics}
+    employer-website: null
+    title: Lead Linux Infrastructure Consultant
+    period-of-employment:
+      start: !!timestamp 2009-01-01
+      end: !!timestamp 2012-05-01
+    details:
+      - >
+          Designed, installed, and serviced solutions for a network of
+          high-performance computational nodes used in the study of beams and
+          accelerators, photon science, and particle physics
+      - >
+          Managed a network of Linux nodes responsible for serving the
+          department's administrative tasks
+
+research:
+  - lab-name: Cornell Robot Learning Lab 
+    research-period:
+      start: !!timestamp 2011-01-01
+      end: !!timestamp 2011-03-01
+    title: Undergraduate Researcher
+    details:
+      - >
+          Worked with Prof. Ashutosh Saxena to create a supervised learning
+          algorithm for finding good object placements using point-clouds of an
+          object and its surrounding area
+      - >
+          Built SVM models from training examples that attained performances in
+          excess of 80% for both precision and recall on both flat and non-flat
+          surface placement by a robotic arm equipped with a Microsoft Kinect
+  - lab-name: Cornell Space Systems Design Studio
+    research-period:
+      start: !!timestamp 2010-04-01
+      end: !!timestamp 2010-12-01
+    title: Power Subteam Member
+    details:
+      - >
+          Designed and fabricated the ATxmega128 based power distribution system
+          for Cornell’s operationally responsive, high agility space imaging 
+          system codenamed 'Violet'
+
+interests:
+  - Music
+  - Cooking
+  - Boxing
+  - Particle Physics
+  - Fusion Engineering
+  - Miyazaki Films
+  - Aerospace Engineering
+
+links:
+  - Github:
+      url: https://github.com/paulkiernan
+      name: paulkiernan
+  - LinkedIn:
+      url: https://www.linkedin.com/pub/paul-kiernan/24/a32/470
+      name: paulkiernan
+  - Twitter:
+      url: https://twitter.com/gaelic
+      name: gaelic
