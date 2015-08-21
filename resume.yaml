@@ -1,5 +1,6 @@
---- # Paul Kiernan Resume Content
-
+# Paul Kiernan Resume Content
+# vim: set ft=yaml ts=2 sts=2 :
+---
 name: Paul Kiernan
 website:  http://paulynomial.com
 email: hi@paulynomial.com
@@ -11,7 +12,7 @@ education:
     description: BS in Electrical and Computer Engineering
     details:
       - Double Concentration in Electrical Engineering and Computer Science
-      - John McMullen Dean Scholar & Goldfarb Tradition Fellow"
+      - John McMullen Dean Scholar & Goldfarb Tradition Fellow
 
 experience:
   - employer-name: Chartbeat Inc.
@@ -25,7 +26,7 @@ experience:
       - Rosetta Stone (DFP translation)
       - Redshift workers and stuff
       - >
-          Teaching non-technical members of the company programming through the 
+          Teaching non-technical members of the company programming through the
           "Learn Python the Hard Way" online curriculum
   - employer-name: Moat Inc.
     employer-website: http://www.moat.com/
