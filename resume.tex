@@ -27,75 +27,88 @@
 \begin{document}
 
 % Header
-\lastupdated
-\namesection{Paul}{Kiernan}{
+% \lastupdated
+\namesection{}{Paul Kiernan}{
     \urlstyle{same}\url{http://paulynomial.com} \\
     \href{mailto:hi@paulynomial.com}{hi@paulynomial.com} \hspace{1mm}|\hspace{1mm} 646.369.6726
 }
 
 \section{Experience}
-
-\runsubsection{\href{http://www.chartbeat.com/}{Chartbeat Inc.}}
+\runsubsection{\href{http://www.chartbeat.com/}{Chartbeat Inc.\\}}
+    \descript{Head of Backend Engineering}
     \location{\hfill October 2016 – Present}
-    \descript{Director of Backend Development}
     \begin{tightemize}
         \item
-            Figure it out, Paul!
+            Built a replicated C++ key-value store capable of writing over 500k
+            records/sec and computing arbitrary views on stored data defined at
+            runtime via Lua. Persisted data in a LMDB copy-on-write b-tree that
+            supports transactions, snapshots, multiple non-blocking readers +
+            single writer, and scales reads linearly with number of CPUs. Used
+            Chain Replication to persist data across nodes
+        \item
+            Built "Miata", a convenient real-time streaming analytics framework
+            for prototyping products built from Chartbeat's data firehose.
+            Framework synthesized high-throughput ZeroMQ, Kafka, and Python
+        \item
+            Led a team of 8 backend engineers across 4 product teams. Conducted
+            weekly 1-on-1s with each team member and advised each on personal,
+            team, and project development
+        \item
+            Modernized old Nagios reporting and alerting infrastructure
     \end{tightemize}
+    \vspace{5pt}
 
+    \descript{Backend Team Lead}
     \location{\hfill October 2015 – October 2016}
-    \descript{Backend Developer Team Lead}
     \begin{tightemize}
         \item
-            Using Neural Networks for fun and profit
+            Led research and development team responsible for prototyping new
+            and experimental products. Presented new research and products
+            products to the company board and communicated the state of active
+            experiments
         \item
-            Technical Team Lead for a research and development arm of the
-            company responsible for developing new and experimental products for
-            Chartbeat -- Goby/Guppy!
-        \item
-            Implemented Robust Principal Component Analysis outlier detection
-            for surfacing anomolous traffic patterns in topics published on the
-            Chartbeat network
-        \item
-            Developer real-time targeting platform for distributers like Kargo
-            to use for targeting trending material
+            Built "Goby," a dashboard for communicating the most engaging
+            articles (by time) active within the Chartbeat news network at the
+            present moment
         \item
             Developed share of voice benchmarking tool to aid publishers in
-            measuring their contribution to a topic discussion on the web
+            measuring their contribution to a news topic
         \item
-            Presented new research and prototype products to the company board
-            to communicate the state of current experimental projects
+            Created real-time targeting platform for ad distributors to
+            identify articles with high engagement
         \item
-            Instructed a recurring Python language class covering advanced
-            features of the language such as writing custom C extensions and
-            debugging workflows
+            Implemented Robust Principal Component Analysis (RPCA) outlier
+            detection for surfacing anomalous traffic patterns in topics
+            published on the Chartbeat network
+        \item
+            Taught a recurring Python language class covering advanced features
+            of the language such as writing custom C extensions and debugging
+            workflows
     \end{tightemize}
+    \vspace{5pt}
 
-    \location{\hfill August 2014 – October 2015}
     \descript{Backend Developer}
+    \location{\hfill August 2014 – October 2015}
     \begin{tightemize}
         \item
-            DFP Campaign screenshotter for indexing ad creatives over time
+            Open-sourced Parselmouth, an object-oriented interface for
+            abstracting away the ugly parts of ad server APIs
         \item
-            Line Item Recommendation Worker
+            Developed a Line Item Recommendation product that suggested new
+            impression target goals that would facilitate hitting a defined
+            engagement goal
         \item
-            Rosetta Stone
-
-        % Drunk stuff
+            Built system for indexing screenshots of advertisement creatives
+            over time
         \item
-            Ad Refresh Technical Team Lead
+            Designed and contributed to many of Chartbeat's APIs
     \end{tightemize}
 \sectionsep
 
-\runsubsection{\href{http://www.moat.com/}{Moat Inc.}}
+\runsubsection{\href{http://www.moat.com/}{Moat Inc. \\}}
+    \descript{Backend Developer}
     \location{\hfill May 2012 – August 2014}
-    \descript{Software Developer}
     \begin{tightemize}
-        \item
-            One of three engineers responsible for the development of the
-            full-stack behind Moat Pro, an enterprise ad-intelligence platform
-            that allows clients to research trends in the online advertising
-            industry
         \item
             Engineered a network of web crawlers capable of programmatically
             detecting, capturing, and indexing online advertisements across
@@ -106,67 +119,48 @@
             Developed API for aggregate results and Pyramid web application for
             serving reports to clients
         \item
-            Developed global navigation autocomplete service for web application
-        \item
-            Created Pyramid middleware for logging user engagement with
-            webapp and real-time analytics application for building reports on
-            usage patterns and behaviour
-        \item
-            Encouraged testing and installed a Jenkins continuous integration
-            server for detecting regressions
-        \item
             Implemented homebrew heterogeneous server role and configuration
-            deployment system in Amazon’s EC2
+            deployment system in Amazon EC2
     \end{tightemize}
 \sectionsep
 
 \section{Education}
     \runsubsection{Cornell University}
-        \location{\hfill May 2012}
-        \descript{BS in Electrical and Computer Engineering}
-        \begin{tightemize}
-        \item
-            Double Concentration in Electrical Engineering and Computer Science
-        \item
-            Honors: John McMullen Dean Scholar, Goldfarb Tradition Fellow
-        \end{tightemize}
+    \descript{BS in Electrical and Computer Engineering (ECE)}
+    \location{\hfill May 2012}
+    \begin{tightemize}
+    \item
+        John McMullen Dean Scholar, Goldfarb Tradition Fellow
+    \end{tightemize}
 \sectionsep
 
-\begin{minipage}[t]{0.42\textwidth}
+\begin{minipage}[t]{0.60\textwidth}
     \section{Programming Skills}
-    \custombold{\meow{Over 60,000 lines:}}
+    \custombold{\meow{Expert:}}
         Python \\
-    \meow{Over 5000 lines:}
-        Java \textbullet{}
-        Shell \textbullet{}
-        Matlab \textbullet{}
-        \LaTeX\ \\
-    \meow{Over 1000 lines:}
-        MySQL \textbullet{}
-        C \textbullet{}
+    \meow{Proficient:}
         C++ \textbullet{}
-        Assembly \\
+        C \textbullet{}
+        Java \textbullet{}
+        Clojure \textbullet{}
+        Shell \textbullet{}
+        SQL \textbullet{}
+        Redshift \\
     \meow{Familiar:}
         JavaScript \textbullet{}
         CSS \textbullet{}
         PHP \\
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.35\textwidth}
+\begin{minipage}[t]{0.39\textwidth}
     \section{Interests}
         Cooking \textbullet{}
-        Boxing \textbullet{}
+        Surfing \textbullet{}
         Particle Physics \\
         Fusion Engineering \textbullet{}
         Miyazaki Films \\
+        Ceramics \textbullet{}
         Aerospace Engineering \textbullet{}
         Music 
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.22\textwidth}
-    \section{Links}
-        Github:// \href{https://github.com/paulkiernan}{\custombold{paulkiernan}}\\
-        LinkedIn:// \href{https://www.linkedin.com/pub/paul-kiernan/24/a32/470}{\custombold{paulynomial}}\\
-        Twitter:// \href{https://twitter.com/gaelic}{\custombold{@gaelic}}\\
 \end{minipage}
 \end{document}

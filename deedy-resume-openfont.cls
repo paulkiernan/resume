@@ -5,7 +5,7 @@
 \ProvidesClass{deedy-resume-openfont}[2014/04/30 CV class]
 \NeedsTeXFormat{LaTeX2e}
 \DeclareOption{print}{\def\@cv@print{}}
-\DeclareOption*{%
+\DeclareOption*{
   \PassOptionsToClass{\CurrentOption}{article}
 }
 \ProcessOptions\relax
@@ -17,8 +17,8 @@
 \usepackage{hyperref}
 \usepackage{titlesec}
 \usepackage[absolute]{textpos}
-\usepackage[UKenglish]{babel}
-\usepackage[UKenglish]{isodate}
+\usepackage[english]{babel}
+\usepackage[english]{isodate}
 \usepackage[no-math]{fontspec}
 \usepackage{xltxtra,xunicode}
 
@@ -75,12 +75,16 @@
 \fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase}{}{0em}{}
 \titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
 \titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
+
 \newcommand{\runsubsection}[1]{
     \color{subheadings}
     \fontspec[Path = fonts/lato/]{Lato-Bol}
     \fontsize{12pt}{12pt}
-    \selectfont\bfseries\uppercase {#1}
-    \normalfont
+    \begin{flushleft}
+        \selectfont\bfseries\uppercase {#1}
+        \normalfont
+    \end{flushleft}
+    \vspace{-5pt}
 }
 
 % Descriptors command
@@ -90,7 +94,7 @@
     \scshape
     \fontspec[Path = fonts/raleway/]{Raleway-Medium}
     \fontsize{11pt}{13pt}
-    \selectfont {#1 \\}
+    \selectfont {#1}
     \normalfont
 }
 
