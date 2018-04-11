@@ -118,7 +118,7 @@
 
 % Section seperators command
 \newcommand{\sectionsep}[0]{
-    \vspace{8pt}
+    \vspace{1pt}
 }
 
 % Bullet Lists with fewer gaps command
