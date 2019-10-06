@@ -84,7 +84,7 @@ def transform_yaml_resume_to_tex(input_filename, output_filename):
     complete_resume = Template(r"""
     \RequirePackage{fix-cm}
     \RequirePackage[l2tabu, orthodox]{nag}
-    \documentclass[]{deedy-resume-openfont}
+    \documentclass[]{resume-openfont}
     \usepackage{microtype}
 
     \begin{document}
