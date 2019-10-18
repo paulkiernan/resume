@@ -93,3 +93,6 @@ sympy-plots-for-*.tex/
 
 # Mac DS_STORE
 .DS_Store
+
+vim
+vim-markdown-preview.html
