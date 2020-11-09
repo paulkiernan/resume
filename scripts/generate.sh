@@ -10,4 +10,4 @@ docker run \
     --rm \
     -v "$REPO_ROOT_DIR:/src" \
     -it resume-builder:latest \
-        make all
+        make all && mv resume.pdf pdf/latest.pdf
