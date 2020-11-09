@@ -1,6 +1,8 @@
 Paul Kiernan
 ============
 
+![Super-Linter](https://github.com/paulkiernan/resume/workflows/Super-Linter/badge.svg)
+
 ```html
 <data>big</data>
 ```
