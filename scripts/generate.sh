@@ -1,13 +1,8 @@
 #!/bin/bash
+# Thin wrapper kept for muscle memory; the build lives in Taskfile.yaml.
 
 set -eux
 
 REPO_ROOT_DIR=$(git rev-parse --show-toplevel)
 
-docker build -t resume-builder "$REPO_ROOT_DIR"
-
-docker run \
-    --rm \
-    -v "$REPO_ROOT_DIR:/src" \
-    -it resume-builder:latest \
-        make all && mv -f resume.pdf pdf/latest.pdf
+cd "$REPO_ROOT_DIR" && task build

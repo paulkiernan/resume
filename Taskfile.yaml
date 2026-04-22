@@ -1,0 +1,70 @@
+# Taskfile for building the resume.
+# Install go-task: brew install go-task
+#
+# The canonical build runs inside Docker for reproducible output:
+#   task            # build the image, compile the PDF in a container,
+#                   # publish to pdf/latest.pdf
+#   task preview    # build and open the PDF
+#   task lint       # run the repo's TeX linter
+#
+# `compile` is the inner task the container executes; it also works
+# directly on a host that has xelatex (e.g. TinyTeX) for quick iteration:
+#   task compile --force
+#   task --watch compile
+
+version: '3'
+
+vars:
+  IMAGE: resume-builder
+
+tasks:
+  default:
+    deps: [build]
+
+  build:
+    desc: Reproducible PDF build inside Docker
+    cmds:
+      - docker build -t {{.IMAGE}} .
+      - docker run --rm -v "$PWD:/src" {{.IMAGE}} task compile --force
+
+  compile:
+    desc: Compile the resume (runs inside the container, or anywhere with xelatex)
+    env:
+      # Lets xelatex resolve fonts/dnd-resume.cls and the bundled font
+      # files without installing them into a texmf tree.
+      TEXINPUTS: ".:./fonts:"
+    vars:
+      # Prefer xelatex on PATH; fall back to a local TinyTeX install.
+      XELATEX:
+        sh: command -v xelatex || echo "$HOME/Library/TinyTeX/bin/universal-darwin/xelatex"
+    sources:
+      - tex/resume.tex
+      - fonts/dnd-resume.cls
+      - fonts/lato/*
+      - fonts/raleway/*
+    generates:
+      - resume.pdf
+    cmds:
+      # Two passes: the TikZ `remember picture` overlays (page border,
+      # sidebar tint) resolve page coordinates from the previous run's .aux.
+      # pdf/latest.pdf is a symlink to the root resume.pdf, so no publish
+      # step is needed.
+      - '"{{.XELATEX}}" -interaction=nonstopmode -halt-on-error tex/resume.tex'
+      - '"{{.XELATEX}}" -interaction=nonstopmode -halt-on-error tex/resume.tex'
+      - task: clean
+
+  preview:
+    desc: Build the resume and open it
+    deps: [build]
+    cmds:
+      - open resume.pdf
+
+  clean:
+    desc: Remove TeX build artifacts (keeps the PDFs)
+    cmds:
+      - rm -f resume.toc resume.aux resume.log resume.out
+
+  lint:
+    desc: Run the repo's TeX linter (Docker)
+    cmds:
+      - ./scripts/lint.sh

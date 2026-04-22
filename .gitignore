@@ -96,3 +96,6 @@ sympy-plots-for-*.tex/
 
 vim
 vim-markdown-preview.html
+
+# go-task checksum cache
+.task/
