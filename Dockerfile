@@ -1,24 +1,21 @@
-FROM debian:stretch-slim
-ENV DEBIAN_FRONTEND noninteractive
+FROM debian:bookworm-slim
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
     apt-get install \
         --yes \
         --no-install-recommends \
-            make \
+            curl \
             git \
             ca-certificates \
             lmodern \
             texlive-latex-base \
-            # texlive-generic-extra \
-            # texlive-fonts-extra \
             texlive-fonts-recommended \
-            texlive-generic-recommended \
+            texlive-latex-recommended \
             texlive-lang-english \
-            latex-xcolor \
-            texlive-math-extra \
             texlive-latex-extra \
             texlive-bibtex-extra \
+            texlive-pictures \
             biber \
             fontconfig \
             texlive-xetex
@@ -27,8 +24,13 @@ RUN apt-get autoclean && \
     apt-get --purge --yes autoremove && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN mkdir -p /root/texmf/tex/latex/local/
-COPY fonts/resume-openfont.cls /root/texmf/tex/latex/local/
+# go-task runs the build (see Taskfile.yaml `compile`); the .cls files
+# resolve from the mounted repo via TEXINPUTS, so nothing is baked into a
+# texmf tree. Pinned version, matching .tool-versions on the host.
+ARG TASK_VERSION=v3.38.0
+RUN curl -sSL \
+        "https://github.com/go-task/task/releases/download/${TASK_VERSION}/task_linux_$(dpkg --print-architecture).tar.gz" \
+    | tar -xz -C /usr/local/bin task
 
 WORKDIR /src
 VOLUME ["/src"]

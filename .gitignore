@@ -96,3 +96,10 @@ sympy-plots-for-*.tex/
 
 vim
 vim-markdown-preview.html
+
+# go-task checksum cache
+.task/
+
+# Private career reference material (repo is public; keep source-of-truth
+# notes with internal details out of the published history)
+reference/
