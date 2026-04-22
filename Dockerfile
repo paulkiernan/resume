@@ -1,5 +1,5 @@
-FROM debian:stretch-slim
-ENV DEBIAN_FRONTEND noninteractive
+FROM debian:bookworm-slim
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
     apt-get install \
@@ -10,15 +10,12 @@ RUN apt-get update && \
             ca-certificates \
             lmodern \
             texlive-latex-base \
-            # texlive-generic-extra \
-            # texlive-fonts-extra \
             texlive-fonts-recommended \
-            texlive-generic-recommended \
+            texlive-latex-recommended \
             texlive-lang-english \
-            latex-xcolor \
-            texlive-math-extra \
             texlive-latex-extra \
             texlive-bibtex-extra \
+            texlive-pictures \
             biber \
             fontconfig \
             texlive-xetex
@@ -29,6 +26,7 @@ RUN apt-get autoclean && \
 
 RUN mkdir -p /root/texmf/tex/latex/local/
 COPY fonts/resume-openfont.cls /root/texmf/tex/latex/local/
+COPY fonts/dnd-resume.cls /root/texmf/tex/latex/local/
 
 WORKDIR /src
 VOLUME ["/src"]
