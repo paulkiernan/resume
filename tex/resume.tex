@@ -6,9 +6,10 @@
 \hypersetup{
     pdftitle={Paul Kiernan - Resume - Staff Software Engineer},
     pdfauthor={Paul Kiernan},
-    pdfsubject={Staff Software Engineer - Distributed Systems, Data Infrastructure, AI Platforms},
-    pdfkeywords={distributed systems, Kafka, Flink, search, Scala, Python,
-                 Kubernetes, Terraform, GenAI, LLM, staff engineer, CTO},
+    pdfsubject={Staff Software Engineer - Search, Streaming, and LLM Retrieval Infrastructure},
+    pdfkeywords={search, retrieval, LLM, GenAI, distributed systems, streaming,
+                 Kafka, Flink, Solr, Lucene, BigQuery, Scala, Python,
+                 Kubernetes, Terraform, Temporal, staff engineer, CTO},
 }
 
 \begin{document}
@@ -52,11 +53,11 @@ San Francisco, CA}%
 
 \questheader{Sabbatical \textemdash\ The Long Rest}{Nov 2025 -- Present} % chktex 8
 \begin{questdetails}
-    \item Exploring LLM development through the lens of a decade building
-          search: how retrieval infrastructure evolves when models become
-          the query interface, and how agentic tooling is rewriting developer products
-    \item Taking a long rest: caring for family and building interactive
-          art installations
+    \item Taking my first proper rest in fifteen years. Family first, art
+          second, and a slow-burn obsession with what happens to search
+          infrastructure when the query interface starts talking back.
+    \item Happy to trade notes on retrieval, Kafka war stories, or agentic
+          developer tools. Say hi.
 \end{questdetails}
 
 \questheader{Phaselaw \textemdash\ The Startup Forge}{Jul 2023 -- Nov 2025} % chktex 8
@@ -68,8 +69,9 @@ San Francisco, CA}%
           Raspberry Pi Foundation
     \item Built and led the engineering organization; owned hiring, engineering
           culture, and technical due diligence with investors and partners
-    \item Drove reliability and deployment practices including CI/CD pipelines,
-          automated testing, and multi-region infrastructure-as-code
+    \item Drove reliability and security practices---CI/CD, automated testing,
+          multi-region infrastructure-as-code---through SOC 2 Type II
+          certification
 \end{questdetails}
 \questrole{Founding Backend Engineer}{Jul 2023 -- Oct 2024} % chktex 8
 \begin{questdetails}
@@ -83,21 +85,23 @@ San Francisco, CA}%
 \questheader{Reddit Inc. \textemdash\ The Front Page Campaign}{Jul 2018 -- Jul 2023} % chktex 8
 \questrole{Staff Software Engineer \textemdash\ Data Engineering \& Search}{Nov 2019 -- Jul 2023} % chktex 8
 \begin{questdetails}
-    \item Tech lead for search indexing; owned end-to-end design of the
-          Scala/Flink pipeline keeping a multi-billion-document Solr/Lucene
-          index fresh against millions of events per second
-    \item Unlocked near-real-time comment search---architected the Kafka
-          infrastructure and consumer DAG that made Reddit's largest content
-          corpus (7.5M+ new comments/day) searchable within seconds of posting
+    \item Tech lead for search indexing (managed 3 engineers, mentored 3
+          more); owned the Scala/Flink pipeline keeping a multi-billion-document
+          Solr/Lucene index fresh against millions of events per second---the
+          same systems later served all of Reddit's LLM applications
+    \item Unlocked comment search, a capability a decade behind post
+          search---architected the Kafka infrastructure and consumer DAG that
+          made Reddit's largest corpus (7.5M+ new comments/day) searchable
+          within a minute of posting
     \item Designed the Kafka platform that finally scaled for Reddit: a 5M+
           messages/sec event backbone other teams built on for analytics,
           data warehousing, and subreddit activity notifications
 \end{questdetails}
 \questrole{Senior Software Engineer II \textemdash\ Data Infrastructure}{Jul 2018 -- Nov 2019} % chktex 8
 \begin{questdetails}
-    \item Built event-driven analytics and data-warehouse ingestion pipelines,
-          replacing poll- and cron-based batch jobs so downstream systems
-          react in seconds rather than hours
+    \item Built event-driven analytics and Kafka-to-BigQuery warehouse
+          ingestion pipelines, replacing poll- and cron-based batch jobs so
+          downstream systems react in seconds rather than hours
 \end{questdetails}
 
 \questheader{Chartbeat Inc. \textemdash\ The Real-Time Chronicles}{Aug 2014 -- Jul 2018} % chktex 8
@@ -149,7 +153,7 @@ San Francisco, CA}%
 
 % --- Personality (professional summary as character traits) ---
 \sidebarsection{Personality}
-\traitbox{Traits}{14-year veteran of large-scale distributed systems.
+\traitbox{Traits}{15-year veteran of large-scale distributed systems.
 Founding engineer to CTO at Phaselaw. Built Reddit's search and streaming
 infrastructure for 500M+ monthly users. Inventor on US Patent 10,068,250.}
 \traitbox{Ideals}{Do the simple thing that works. Boring technology,
@@ -168,9 +172,10 @@ C \textbullet{} Java \textbullet{} Clojure\\
 Shell \textbullet{} SQL\\[1pt]
 {\dndbold\color{dndred}Data \& Infrastructure}\\
 Kafka \textbullet{} Flink \textbullet{} Solr\\
-Lucene \textbullet{} Redshift \textbullet{} ZeroMQ\\
+Lucene \textbullet{} BigQuery \textbullet{} ZeroMQ\\
 HAProxy \textbullet{} AWS \textbullet{} Docker\\
 Kubernetes \textbullet{} Terraform\\
+Temporal \textbullet{} ArgoCD\\
 GenAI/LLM pipelines\\[1pt]
 {\dndbold\color{dndred}Familiar}\\
 JavaScript \textbullet{} CSS \textbullet{} PHP\par}
