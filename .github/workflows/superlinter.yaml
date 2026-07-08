@@ -1,6 +1,10 @@
 name: Super-Linter
 on: push
 
+permissions:
+  contents: read
+  statuses: write
+
 jobs:
   super-lint:
     # Name the Job
@@ -10,13 +14,15 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+        with:
+          # Full history so super-linter can diff against the default branch
+          fetch-depth: 0
 
       - name: Run Super-Linter
-        uses: github/super-linter@v3
+        uses: super-linter/super-linter@v8.7.0
         env:
           DEFAULT_BRANCH: main
-          OUTPUT_DETAILS: detailed
           VALIDATE_ALL_CODEBASE: true
           VALIDATE_LATEX: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
