@@ -1,0 +1,24 @@
+name: Lint
+on: push
+
+permissions:
+  contents: read
+
+jobs:
+  chktex:
+    # Plain chktex, the same Debian/Ubuntu package the Dockerfile installs.
+    # scripts/lint.sh is the single source of truth for the invocation.
+    name: chktex
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install chktex
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends chktex
+
+      - name: Lint TeX sources
+        run: ./scripts/lint.sh

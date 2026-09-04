@@ -1,14 +1,16 @@
 #!/bin/bash
+# Lint the TeX sources with chktex.
+#
+# Runs anywhere chktex is installed: CI (apt), the resume-builder container
+# (`task lint`), or a host TeX install such as TinyTeX (`task chktex`).
+# chktex exits non-zero when it reports anything, so any finding fails the
+# run. Silence a single false positive inline with `% chktex N`.
 
 set -eu
 
-REPO_ROOT_DIR=$(git rev-parse --show-toplevel)
+cd "$(dirname "$0")/.."
 
-docker run \
-    --rm \
-    -e OUTPUT_DETAILS=detailed \
-    -e RUN_LOCAL=true \
-    -e VALIDATE_ALL_CODEBASE=true \
-    -e VALIDATE_LATEX=true \
-    -v "$REPO_ROOT_DIR":/tmp/lint \
-    github/super-linter
+# Prefer chktex on PATH; fall back to a local TinyTeX install.
+CHKTEX=$(command -v chktex || echo "$HOME/Library/TinyTeX/bin/universal-darwin/chktex")
+
+"$CHKTEX" -q tex/*.tex

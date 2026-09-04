@@ -5,7 +5,8 @@
 #   task            # build the image, compile the PDF in a container,
 #                   # publish to pdf/latest.pdf
 #   task preview    # build and open the PDF
-#   task lint       # run the repo's TeX linter
+#   task lint       # lint the TeX source with chktex, in Docker
+#   task chktex     # same, with a chktex already on the host
 #
 # `compile` is the inner task the container executes; it also works
 # directly on a host that has xelatex (e.g. TinyTeX) for quick iteration:
@@ -65,6 +66,12 @@ tasks:
       - rm -f resume.toc resume.aux resume.log resume.out
 
   lint:
-    desc: Run the repo's TeX linter (Docker)
+    desc: Lint the TeX source with chktex inside Docker (same image as the build)
+    cmds:
+      - docker build -t {{.IMAGE}} .
+      - docker run --rm -v "$PWD:/src" {{.IMAGE}} task chktex
+
+  chktex:
+    desc: Run chktex directly (inside the container, or anywhere chktex is installed)
     cmds:
       - ./scripts/lint.sh

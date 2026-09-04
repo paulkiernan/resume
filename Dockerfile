@@ -8,6 +8,7 @@ RUN apt-get update && \
             curl \
             git \
             ca-certificates \
+            chktex \
             lmodern \
             texlive-latex-base \
             texlive-fonts-recommended \

@@ -1,7 +1,7 @@
 Paul Kiernan
 ============
 
-![Super-Linter](https://github.com/paulkiernan/resume/workflows/Super-Linter/badge.svg)
+![Lint](https://github.com/paulkiernan/resume/actions/workflows/lint.yaml/badge.svg)
 
 ```html
 <data>big</data>
@@ -33,7 +33,8 @@ by [go-task](https://taskfile.dev) (`brew install go-task`):
 ```sh
 task            # build image, compile the PDF in a container, publish output
 task preview    # build and open the PDF
-task lint       # run the TeX linter
+task lint       # lint the TeX source with chktex, in Docker
+task chktex     # same, with a chktex already on the host
 ```
 
 For quick local iteration with a host TeX install (e.g.
@@ -44,6 +45,9 @@ Good to know:
 - The build runs **two xelatex passes** — the TikZ `remember picture`
   overlays (page border, sidebar tint) need the second pass to anchor to the
   page. One pass leaves the border floating mid-page.
+- Lint is plain [chktex](https://www.nongnu.org/chktex/), locally and in CI;
+  any warning fails the run. Silence a single false positive with a
+  `% chktex N` comment on that line.
 - The layout is built to be **machine-readable despite the theme**: the main
   column precedes the sidebar in extraction order, so ATS parsers read
   name → contact → experience → skills.
