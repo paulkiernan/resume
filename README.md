@@ -9,7 +9,13 @@ Paul Kiernan
 
 My resume, typeset in LaTeX as a Dungeons & Dragons 5e character sheet.
 
-**[📄 resume.pdf](resume.pdf)** — the latest build, straight from the repo root.
+**Published resume** (GitHub Pages, rebuilt from `main` on every push):
+
+- 📄 **<https://paulkiernan.github.io/resume/resume.pdf>** — canonical link
+- 📄 **<https://paulkiernan.github.io/resume/pdf/latest.pdf>** — stable alias of
+  the same file (the one [paulynomial.com](https://paulynomial.com) points at)
+
+In the repo itself: [`resume.pdf`](resume.pdf) at the root is the latest build.
 
 What's in here
 --------------
@@ -19,8 +25,8 @@ What's in here
 - [`fonts/dnd-resume.cls`](fonts/dnd-resume.cls) — custom LaTeX class doing the
   heavy lifting: parchment page with a TikZ border, 5e stat-block tapered
   rules, ability-score boxes with modifier bubbles, sidebar tinting
-- [`fonts/`](fonts/) — vendored open fonts (Lato, Raleway; see
-  [NOTICE.md](NOTICE.md)) so builds are self-contained
+- [`fonts/`](fonts/) — vendored open fonts (Lato and Raleway, both under the
+  SIL Open Font License) so builds are self-contained
 - [`pdf/`](pdf/) — archive of older versions; `pdf/latest.pdf` is a symlink
   to the root `resume.pdf`
 
