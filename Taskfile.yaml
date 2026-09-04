@@ -1,17 +1,20 @@
 # Taskfile for building the resume.
 # Install go-task: brew install go-task
 #
-# The canonical build runs inside Docker for reproducible output:
-#   task            # build the image, compile the PDF in a container,
-#                   # publish to pdf/latest.pdf
-#   task preview    # build and open the PDF
+# The canonical build runs inside Docker for reproducible output. Two
+# documents come out: resume.pdf (the D&D character sheet) and
+# resume-standard.pdf (the conventional one-page resume).
+#   task                   # build the image, compile both PDFs in a container
+#   task preview           # build and open the character sheet
+#   task preview-standard  # build and open the conventional resume
 #   task lint       # lint the TeX source with chktex, in Docker
 #   task chktex     # same, with a chktex already on the host
 #
-# `compile` is the inner task the container executes; it also works
-# directly on a host that has xelatex (e.g. TinyTeX) for quick iteration:
-#   task compile --force
-#   task --watch compile
+# `compile` and `compile-standard` are the inner tasks the container
+# executes; they also work directly on a host that has xelatex (e.g.
+# TinyTeX) for quick iteration:
+#   task compile compile-standard --force
+#   task --watch compile-standard
 
 version: '3'
 
@@ -26,10 +29,10 @@ tasks:
     desc: Reproducible PDF build inside Docker
     cmds:
       - docker build -t {{.IMAGE}} .
-      - docker run --rm -v "$PWD:/src" {{.IMAGE}} task compile --force
+      - docker run --rm -v "$PWD:/src" {{.IMAGE}} task compile compile-standard --force
 
   compile:
-    desc: Compile the resume (runs inside the container, or anywhere with xelatex)
+    desc: Compile the character-sheet resume (runs inside the container, or anywhere with xelatex)
     env:
       # Lets xelatex resolve fonts/dnd-resume.cls and the bundled font
       # files without installing them into a texmf tree.
@@ -54,16 +57,44 @@ tasks:
       - '"{{.XELATEX}}" -interaction=nonstopmode -halt-on-error tex/resume.tex'
       - task: clean
 
+  compile-standard:
+    desc: Compile the conventional resume (runs inside the container, or anywhere with xelatex)
+    env:
+      TEXINPUTS: ".:./fonts:"
+    vars:
+      XELATEX:
+        sh: command -v xelatex || echo "$HOME/Library/TinyTeX/bin/universal-darwin/xelatex"
+    sources:
+      - tex/resume-standard.tex
+      - fonts/standard-resume.cls
+      - fonts/lato/*
+      - fonts/raleway/*
+    generates:
+      - resume-standard.pdf
+    cmds:
+      # Two passes, same as `compile`, so hyperref targets settle.
+      # pdf/standard.pdf is a symlink to the root resume-standard.pdf.
+      - '"{{.XELATEX}}" -interaction=nonstopmode -halt-on-error tex/resume-standard.tex'
+      - '"{{.XELATEX}}" -interaction=nonstopmode -halt-on-error tex/resume-standard.tex'
+      - task: clean
+
   preview:
-    desc: Build the resume and open it
+    desc: Build both resumes and open the character sheet
     deps: [build]
     cmds:
       - open resume.pdf
+
+  preview-standard:
+    desc: Build both resumes and open the conventional one
+    deps: [build]
+    cmds:
+      - open resume-standard.pdf
 
   clean:
     desc: Remove TeX build artifacts (keeps the PDFs)
     cmds:
       - rm -f resume.toc resume.aux resume.log resume.out
+      - rm -f resume-standard.toc resume-standard.aux resume-standard.log resume-standard.out
 
   lint:
     desc: Lint the TeX source with chktex inside Docker (same image as the build)
