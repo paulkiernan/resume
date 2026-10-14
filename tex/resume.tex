@@ -38,86 +38,83 @@ the NHS and others.}
 % ===== EXPERIENCE =====
 \resumesection{Experience}
 
-\employer{Sabbatical}{San Francisco, CA}{Nov 2025 -- Present} % chktex 8
+\begin{company}{Sabbatical}{Planned break after Phaselaw}{San Francisco, CA}{Nov 2025 -- Present} % chktex 8
 \begin{bullets}
-    \item Planned break after Phaselaw: time with family, and independent
-          study of what retrieval infrastructure looks like when agents, not
-          humans, are the query interface.
+    \item Time with family, and digging into how retrieval infrastructure
+          changes when AI agents, not people, are the ones searching.
 \end{bullets}
+\end{company}
 
-\employer{Phaselaw}{Remote (San Francisco, CA)}{Jul 2023 -- Nov 2025} % chktex 8
+\begin{company}{Phaselaw}{AI document review and redaction}{Remote}{Jul 2023 -- Nov 2025} % chktex 8
 \role{Chief Technology Officer}{Oct 2024 -- Nov 2025} % chktex 8
 \begin{bullets}
-    \item Led engineering for an AI-powered document review and redaction
-          platform handling highly sensitive legal and personal data: 10M+
-          documents redacted for the NHS, the UK Labour Party, and the
-          Raspberry Pi Foundation.
-    \item Built and led the engineering organization; owned hiring, engineering culture, and technical due
-          diligence with investors and partners.
-    \item Took the platform through SOC 2 Type II\@: CI/CD, automated testing,
-          OpenTelemetry observability, and multi-region Terraform on AWS (US,
-          EU, and UK for data residency); stack: LLM-based PII identification
-          (Claude on AWS Bedrock), Temporal orchestration, multi-tenant
-          Kubernetes with ArgoCD GitOps.
+    \item \lead{Platform.} Ran engineering for AI redaction of highly sensitive
+          legal and personal data, trusted with 10M+ documents by the NHS, the
+          UK Labour Party, and the Raspberry Pi Foundation.
+    \item \lead{Team.} Built and led the engineering organization: hiring,
+          culture, and technical due diligence with investors and partners.
+    \item \lead{SOC 2 Type II.} Took the platform through certification: CI/CD,
+          automated testing, OpenTelemetry, and multi-region Terraform on AWS
+          keeping customer data in the US, EU, or UK\@.
+    \item \lead{AI pipeline.} Claude on AWS Bedrock finding PII in legal
+          documents, orchestrated by Temporal on multi-tenant Kubernetes.
 \end{bullets}
 \role{Founding Backend Engineer}{Jul 2023 -- Oct 2024} % chktex 8
 \begin{bullets}
-    \item Designed and built the core backend from zero (data models, API
-          layer, authn/authz, service architecture) across multiple global
-          regions; made the foundational technology choices, favoring boring,
-          proven technology so a small team could ship and operate
-          a global platform.
+    \item \lead{Built from zero.} Designed and shipped the core backend: data
+          models, API, auth, and a service architecture spanning multiple
+          global regions.
 \end{bullets}
+\end{company}
 
-\employer{Reddit}{San Francisco, CA}{Jul 2018 -- Jul 2023} % chktex 8
-\role{Staff Software Engineer --- Tech Lead, Search Indexing}{Nov 2019 -- Jul 2023} % chktex 8
+\begin{company}{Reddit}{500M+ monthly users}{San Francisco, CA}{Jul 2018 -- Jul 2023} % chktex 8
+\role{Staff Software Engineer, Tech Lead, Search Indexing}{Nov 2019 -- Jul 2023} % chktex 8
 \begin{bullets}
-    \item Led the search indexing team: managed 3 engineers and mentored 3
-          more while staying hands-on, and owned the end-to-end design of the
-          Scala/Apache Flink pipeline keeping a multi-billion-document
-          Solr/Lucene index fresh against millions of events per second.
-    \item Shipped comment search, a capability Reddit had lacked for a decade
-          after post search, by architecting the Kafka infrastructure and
-          consumer DAG that indexes 7.5M+ new comments/day within 60 seconds
-          of posting.
-    \item The same indexing and retrieval systems later served all of
-          Reddit's LLM applications.
-    \item Designed the Kafka platform that finally scaled for Reddit: multiple
-          self-managed clusters with tuned partitioning and replication and a
-          new consumer-processor pattern; a 5M+ messages/sec backbone adopted
-          by the analytics, data warehousing, and subreddit notification
-          teams.
-    \item Led search incident response and materially improved Reddit Search
-          uptime.
+    \item \lead{Search indexing.} Led the team keeping a multi-billion-document
+          Solr/Lucene index fresh against millions of events per second;
+          managed 3 engineers, mentored 3 more, and designed the Scala/Flink
+          pipeline.
+    \item \lead{Comment search.} Gave Reddit comment search after a decade
+          without it: a Kafka consumer DAG that makes 7.5M+ new comments a day
+          searchable within 60 seconds of posting.
+    \item \lead{Kafka platform.} Designed the Kafka platform that finally
+          scaled for Reddit: a 5M+ messages/sec backbone, adopted by analytics,
+          data warehousing, and notifications.
+    \item \lead{LLM retrieval.} These indexing and retrieval systems went on to
+          serve all of Reddit's LLM applications.
+    \item \lead{Reliability.} Led search incident response and materially
+          improved Reddit Search uptime.
 \end{bullets}
 \role{Senior Software Engineer II, Data Infrastructure}{Jul 2018 -- Nov 2019} % chktex 8
 \begin{bullets}
-    \item Replaced poll- and cron-based batch jobs with event-driven analytics
-          and Kafka-to-BigQuery warehouse ingestion pipelines, cutting
-          downstream latency from hours to seconds.
+    \item \lead{Real-time warehouse.} Cut warehouse latency from hours to
+          seconds, replacing cron batch jobs with event-driven
+          Kafka-to-BigQuery pipelines.
 \end{bullets}
+\end{company}
 
-\employer{Chartbeat}{New York, NY}{Aug 2014 -- Jul 2018} % chktex 8
+\begin{company}{Chartbeat}{Real-time analytics for publishers}{New York, NY}{Aug 2014 -- Jul 2018} % chktex 8
 \role{Head of Backend Engineering}{Oct 2016 -- Jul 2018} % chktex 8
 \begin{bullets}
-    \item Led 8 backend engineers across 4 product teams; earlier led the
-          R\&D team (Backend Team Lead) and presented experimental products to
-          the board.
-    \item Built MrRoboto, a replicated C++ key-value store sustaining 500k+
-          writes/sec (LMDB copy-on-write B-tree, chain replication); Miata, a
-          real-time streaming analytics framework on Kafka, ZeroMQ, and
-          Python; and the probabilistic-counting backend for the ``so far
-          today'' API\@. Open-sourced Parselmouth.
+    \item \lead{Leadership.} Ran backend engineering: 8 engineers across 4
+          product teams. Before that, led the R\&D team and presented its
+          experimental products to the board.
+    \item \lead{Systems.} Built MrRoboto, a chain-replicated C++ key-value
+          store taking 500k+ writes/sec; Miata, a real-time streaming analytics
+          framework; and the probabilistic counting behind the ``so far today''
+          API\@. Open-sourced Parselmouth.
 \end{bullets}
+\end{company}
 
-\employer{Moat (acquired by Oracle)}{New York, NY}{Jun 2012 -- Aug 2014} % chktex 8
+\begin{company}{Moat}{Ad analytics, acquired by Oracle}{New York, NY}{Jun 2012 -- Aug 2014} % chktex 8
 \role{Software Developer}{}
 \begin{bullets}
-    \item Early engineer on Moat Pro, an enterprise ad-intelligence platform;
-          built the geo-distributed web-crawler network, ETL pipeline, and
-          reporting API that detected, captured, and indexed online
-          advertisements.
+    \item \lead{Ad intelligence.} Early engineer on Moat Pro, tracking online
+          ads for enterprise clients: built the geo-distributed crawler
+          network, ETL pipeline, and reporting API that captured and indexed
+          them.
 \end{bullets}
+\end{company}
 
 % ===== SKILLS =====
 \resumesection{Skills}

@@ -118,21 +118,34 @@
 }
 
 % --- Experience ---
-\newcommand{\employer}[3]{% {NAME}{LOCATION}{DATES}
-    \vspace{4pt}%
-    {\monofont\bfseries\fontsize{11pt}{13pt}\selectfont #1}%
-    \if\relax\detokenize{#2}\relax\else\hspace{0.7em}{\color{mid}#2}\fi%
-    \hfill{\datefont #3}\par%
+% Each company opens with a black tick (echoing the header rule), a large
+% mono name, a grey one-line description and location, and dates; roles and
+% bullets are indented beneath it.
+\newlength{\bandindent}
+\setlength{\bandindent}{13.5pt}
+\newenvironment{company}[4]{% {NAME}{WHAT IT IS}{LOCATION}{DATES}
+    \par\vspace{8pt}\noindent
+    {\color{ink}\vrule width 3.5pt height 10.5pt depth 2.5pt}\hspace{10pt}%
+    {\monofont\bfseries\fontsize{12.5pt}{14pt}\selectfont #1}%
+    \hspace{0.9em}{\color{mid}#2}%
+    \hspace{0.9em}{\color{faint}#3}%
+    \hfill{\datefont #4}\par%
+    \vspace{1pt}%
+    \leftskip=\bandindent%
+}{%
+    \par%
 }
 \newcommand{\role}[2]{% {TITLE}{DATES}
     \vspace{2pt}%
     {\stdbold #1}\hfill{\datefont #2}\par%
 }
+% Bold lead-in at the start of a bullet, so the page scans
+\newcommand{\lead}[1]{{\stdbold #1}}
 
-% --- Tight bullet list with grey dash markers ---
+% --- Tight bullet list with grey dash markers, aligned under the company ---
 \newenvironment{bullets}{%
-    \begin{itemize}[leftmargin=1.1em, labelsep=0.5em, itemsep=0.5pt,
-                    parsep=0pt, topsep=1.5pt, partopsep=0pt,
+    \begin{itemize}[leftmargin=\dimexpr\bandindent+1.1em\relax, labelsep=0.5em,
+                    itemsep=0.5pt, parsep=0pt, topsep=1.5pt, partopsep=0pt,
                     label={\color{faint}\textendash}]%
 }{%
     \end{itemize}%
