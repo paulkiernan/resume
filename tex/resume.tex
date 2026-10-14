@@ -1,222 +1,139 @@
-\RequirePackage{fix-cm}
-\documentclass[]{dnd-resume}
-\usepackage{microtype}
+\documentclass{resume}
 
 % PDF metadata for ATS parsers and search indexing
 \hypersetup{
-    pdftitle={Paul Kiernan - Resume - Staff Software Engineer}, % chktex 8
+    pdftitle={Paul Kiernan - Resume - Staff+ Infrastructure Engineer}, % chktex 8
     pdfauthor={Paul Kiernan},
-    pdfsubject={Staff Software Engineer - Search, Streaming, and LLM Retrieval Infrastructure}, % chktex 8
-    pdfkeywords={search, retrieval, LLM, GenAI, distributed systems, streaming,
-                 Kafka, Flink, Solr, Lucene, BigQuery, Scala, Python,
-                 Kubernetes, Terraform, Temporal, staff engineer, CTO},
+    pdfsubject={Staff+ Infrastructure Engineer - Search, Retrieval and Streaming Systems}, % chktex 8
+    pdfkeywords={search, retrieval, LLM, distributed systems, Kafka, Flink, Solr,
+                 Lucene, Kubernetes, Terraform, Temporal, staff engineer,
+                 principal, CTO},
 }
 
 \begin{document}
-\pagedecor%
 
 % ===== HEADER =====
-\charactername{Paul Kiernan}
-\charactersub{Medium humanoid (engineer), chaotic good}
-\infoplate{%
-{\fontsize{8.5pt}{10pt}\selectfont%
-\charinfo{Class \& Level}{Staff Engineer 11 / CTO 3}%
-\quad{\color{dndred}\textbullet}\quad%
-\charinfo{Race}{Human (Variant)}%
-\quad{\color{dndred}\textbullet}\quad%
-\charinfo{Background}{Sage (ECE)}%
-\quad{\color{dndred}\textbullet}\quad%
-\charinfo{Alignment}{Chaotic Good}%
-}}%
-\par\vspace{3pt}%
-\noindent\centering%
-{\dndreg\fontsize{9pt}{11pt}\selectfont%
-\href{http://paulynomial.com}{paulynomial.com}%
-\quad{\color{dndred}\textbullet}\quad%
-\href{mailto:hi@paulynomial.com}{hi@paulynomial.com}%
-\quad{\color{dndred}\textbullet}\quad%
-646.369.6726%
-\quad{\color{dndred}\textbullet}\quad%
-San Francisco, CA}%
-\par\vspace{4pt}%
-\thickrule%
-\vspace{3pt}
+\prompt{\textasciitilde/paulynomial}
+\name{Paul Kiernan}
+\tagline{staff+ infrastructure engineer --- search, retrieval \& streaming systems}
+\contactline{%
+\href{mailto:hi@paulynomial.com}{hi@paulynomial.com}\sep{}%
+646.369.6726\sep{}%
+\href{https://paulynomial.com}{paulynomial.com}\sep{}%
+\href{https://github.com/paulkiernan}{github.com/paulkiernan}\sep{}%
+\href{https://www.linkedin.com/in/paulynomial}{linkedin.com/in/paulynomial}\sep{}%
+San Francisco, CA}
+\makeheader%
 
-% ===== TWO-COLUMN LAYOUT =====
-% Main column first in source order so PDF text extraction reads
-% experience before the sidebar (friendlier to ATS parsers).
-\marksidebarstart%
-\begin{minipage}[t]{0.74\linewidth}
+% ===== SUMMARY =====
+\summary{Fifteen years building search and streaming infrastructure at scale.
+At Reddit (500M+ monthly users), led search indexing for a
+multi-billion-document Solr/Lucene index, shipped comment search (7.5M+ new
+comments a day, searchable within 60 seconds), and designed the 5M+
+messages/sec Kafka platform other teams built on; the same systems later
+served Reddit's LLM products. Founding engineer, then CTO, at Phaselaw: built
+an AI redaction platform from zero to SOC 2 Type II and 10M+ documents for
+the NHS and others.}
 
-% ===== QUEST LOG (Experience) =====
-\dndsection{Quest Log}
+% ===== EXPERIENCE =====
+\resumesection{Experience}
 
-\questheader{Sabbatical \textemdash\ The Long Rest}{Nov 2025 -- Present} % chktex 8
-\begin{questdetails}
-    \item Taking my first proper rest in fifteen years. Family first, art
-          second, and a slow-burn obsession with what happens to search
-          infrastructure when the query interface starts talking back.
-    \item Happy to trade notes on retrieval, Kafka war stories, or agentic
-          developer tools. Say hi.
-\end{questdetails}
+\employer{Sabbatical}{San Francisco, CA}{Nov 2025 -- Present} % chktex 8
+\begin{bullets}
+    \item Planned break after Phaselaw: time with family, and independent
+          study of what retrieval infrastructure looks like when agents, not
+          humans, are the query interface.
+\end{bullets}
 
-\questheader{Phaselaw \textemdash\ The Startup Forge}{Jul 2023 -- Nov 2025} % chktex 8
-\questrole{Chief Technology Officer}{Oct 2024 -- Nov 2025} % chktex 8
-\begin{questdetails}
-    \item Architected an AI-powered document review and redaction platform
-          entrusted with highly sensitive legal and personal data---10M+
-          documents securely redacted for the NHS, Labour (UK), and the
-          Raspberry Pi Foundation
-    \item Built and led the engineering organization; owned hiring, engineering
-          culture, and technical due diligence with investors and partners
-    \item Drove reliability and security practices---CI/CD, automated testing,
-          multi-region infrastructure-as-code---through SOC 2 Type II
-          certification
-\end{questdetails}
-\questrole{Founding Backend Engineer}{Jul 2023 -- Oct 2024} % chktex 8
-\begin{questdetails}
-    \item Designed and built the core backend platform from zero---data models,
-          API layer, auth, and service architecture deployed across multiple global regions
-    \item Made foundational technology choices (language, framework, database,
-          cloud provider), favoring boring, proven technology that let a tiny
-          team ship and operate a global platform
-\end{questdetails}
+\employer{Phaselaw}{Remote (San Francisco, CA)}{Jul 2023 -- Nov 2025} % chktex 8
+\role{Chief Technology Officer}{Oct 2024 -- Nov 2025} % chktex 8
+\begin{bullets}
+    \item Led engineering for an AI-powered document review and redaction
+          platform handling highly sensitive legal and personal data: 10M+
+          documents redacted for the NHS, the UK Labour Party, and the
+          Raspberry Pi Foundation.
+    \item Built and led the engineering organization; owned hiring, engineering culture, and technical due
+          diligence with investors and partners.
+    \item Took the platform through SOC 2 Type II\@: CI/CD, automated testing,
+          OpenTelemetry observability, and multi-region Terraform on AWS (US,
+          EU, and UK for data residency); stack: LLM-based PII identification
+          (Claude on AWS Bedrock), Temporal orchestration, multi-tenant
+          Kubernetes with ArgoCD GitOps.
+\end{bullets}
+\role{Founding Backend Engineer}{Jul 2023 -- Oct 2024} % chktex 8
+\begin{bullets}
+    \item Designed and built the core backend from zero (data models, API
+          layer, authn/authz, service architecture) across multiple global
+          regions; made the foundational technology choices, favoring boring,
+          proven technology so a small team could ship and operate
+          a global platform.
+\end{bullets}
 
-\questheader{Reddit Inc.\ \textemdash\ The Front Page Campaign}{Jul 2018 -- Jul 2023} % chktex 8
-\questrole{Senior Staff Software Engineer}{2021 -- Jul 2023} % chktex 8
-\begin{questdetails}
-    \item Built the technology that brought Reddit real-time comment indexing,
-          a capability the company had lacked for a decade after post search:
-          architected the Kafka infrastructure and consumer DAG that makes
-          7.5M+ new comments/day searchable within 60 seconds of posting
-    % TODO(paul): add the outcome --- lift in search sessions, share of
-    % search traffic, or retention.
+\employer{Reddit}{San Francisco, CA}{Jul 2018 -- Jul 2023} % chktex 8
+\role{Staff Software Engineer --- Tech Lead, Search Indexing}{Nov 2019 -- Jul 2023} % chktex 8
+\begin{bullets}
+    \item Led the search indexing team: managed 3 engineers and mentored 3
+          more while staying hands-on, and owned the end-to-end design of the
+          Scala/Apache Flink pipeline keeping a multi-billion-document
+          Solr/Lucene index fresh against millions of events per second.
+    \item Shipped comment search, a capability Reddit had lacked for a decade
+          after post search, by architecting the Kafka infrastructure and
+          consumer DAG that indexes 7.5M+ new comments/day within 60 seconds
+          of posting.
     \item The same indexing and retrieval systems later served all of
-          Reddit's LLM applications
-    % TODO(paul): name them (e.g. Reddit Answers) and any data-licensing
-    % corpora they fed.
-\end{questdetails}
-\questrole{Staff Software Engineer \textemdash\ Data Engineering \& Search Infrastructure}{Nov 2019 -- 2021} % chktex 8
-\begin{questdetails}
-    \item Ran data engineering and search infrastructure: managed 3 engineers
-          and mentored 3 more while staying hands-on. Owned end-to-end design
-          of the Scala/Apache Flink pipeline keeping a multi-billion-document
-          Solr/Lucene index fresh against millions of events per second
+          Reddit's LLM applications.
     \item Designed the Kafka platform that finally scaled for Reddit: multiple
           self-managed clusters with tuned partitioning and replication and a
           new consumer-processor pattern; a 5M+ messages/sec backbone adopted
-          by the analytics, data warehousing, and subreddit notification teams
+          by the analytics, data warehousing, and subreddit notification
+          teams.
     \item Led search incident response and materially improved Reddit Search
-          uptime
-    % TODO(paul): quantify uptime --- from X to Y, e.g. 99.5% to 99.95%.
-\end{questdetails}
-\questrole{Senior Software Engineer II \textemdash\ Data Infrastructure}{Jul 2018 -- Nov 2019} % chktex 8
-\begin{questdetails}
+          uptime.
+\end{bullets}
+\role{Senior Software Engineer II, Data Infrastructure}{Jul 2018 -- Nov 2019} % chktex 8
+\begin{bullets}
     \item Replaced poll- and cron-based batch jobs with event-driven analytics
           and Kafka-to-BigQuery warehouse ingestion pipelines, cutting
-          downstream latency from hours to seconds
-\end{questdetails}
+          downstream latency from hours to seconds.
+\end{bullets}
 
-\questheader{Chartbeat Inc.\ \textemdash\ The Real-Time Chronicles}{Aug 2014 -- Jul 2018} % chktex 8
-\questrole{Head of Backend Engineering}{Oct 2016 -- Jul 2018} % chktex 8
-\begin{questdetails}
-    \item Forged \textit{MrRoboto}, a chain-replicated C++ key-value store on
-          LMDB handling 500k+ writes/sec
-    \item Forged \textit{Miata}, a real-time streaming analytics framework
-          using Kafka, ZeroMQ, and Python
-    \item Led a party of 8 backend engineers across 4 product teams, with
-          weekly 1-on-1s for each
-\end{questdetails}
-\questrole{Backend Team Lead}{Oct 2015 -- Oct 2016} % chktex 8
-\begin{questdetails}
-    \item Led the R\&D team prototyping experimental products; presented
-          research to the Chartbeat Board
-\end{questdetails}
-\questrole{Backend Developer}{Aug 2014 -- Oct 2015} % chktex 8
-\begin{questdetails}
-    \item Open-sourced \textit{Parselmouth}, an object-oriented interface for
-          abstracting away the ugly parts of ad server APIs
-\end{questdetails}
+\employer{Chartbeat}{New York, NY}{Aug 2014 -- Jul 2018} % chktex 8
+\role{Head of Backend Engineering}{Oct 2016 -- Jul 2018} % chktex 8
+\begin{bullets}
+    \item Led 8 backend engineers across 4 product teams; earlier led the
+          R\&D team (Backend Team Lead) and presented experimental products to
+          the board.
+    \item Built MrRoboto, a replicated C++ key-value store sustaining 500k+
+          writes/sec (LMDB copy-on-write B-tree, chain replication); Miata, a
+          real-time streaming analytics framework on Kafka, ZeroMQ, and
+          Python; and the probabilistic-counting backend for the ``so far
+          today'' API\@. Open-sourced Parselmouth.
+\end{bullets}
 
-\questheader{Moat Inc.\ (acq.\ Oracle) \textemdash\ The Crawler Dungeons}{Jun 2012 -- Aug 2014} % chktex 8
-\questrole{Software Developer}{Jun 2012 -- Aug 2014} % chktex 8
-\begin{questdetails}
-    \item Early team member behind Moat Pro, an enterprise ad-intelligence
-          platform for online advertising
-    \item Engineered a network of web crawlers detecting and indexing online
-          ads across geographic regions
-\end{questdetails}
+\employer{Moat (acquired by Oracle)}{New York, NY}{Jun 2012 -- Aug 2014} % chktex 8
+\role{Software Developer}{}
+\begin{bullets}
+    \item Early engineer on Moat Pro, an enterprise ad-intelligence platform;
+          built the geo-distributed web-crawler network, ETL pipeline, and
+          reporting API that detected, captured, and indexed online
+          advertisements.
+\end{bullets}
 
-\end{minipage}%
-\hfill%
-\begin{minipage}[t][19.2cm]{0.22\linewidth}
+% ===== SKILLS =====
+\resumesection{Skills}
+\skillrow{Languages}{Python, Scala, C++, Java, C, Clojure, SQL, Shell}
+\skillrow{Infrastructure}{Kafka, Apache Flink, Solr/Lucene, BigQuery,
+    Temporal, ZeroMQ, AWS (multi-region), Kubernetes, Terraform, ArgoCD,
+    OpenTelemetry, HAProxy}
+\skillrow{AI / LLM}{LLM extraction pipelines (Claude on AWS Bedrock),
+    retrieval infrastructure for LLM applications}
 
-% --- Ability Scores (3x2 grid) ---
-\sidebarsection{Ability Scores}
-\vspace{4pt}%
-{\centering%
-\tinyabilitybox{Systems}{18}\hspace{2pt}%
-\tinyabilitybox{Data}{20}\hspace{2pt}%
-\tinyabilitybox{Backend}{18}\\[6pt]%
-\tinyabilitybox{Infra}{17}\hspace{2pt}%
-\tinyabilitybox{Leader}{16}\hspace{2pt}%
-\tinyabilitybox{Scale}{19}\par}
-\vspace{6pt}
-\vfill
-
-% --- Personality (professional summary as character traits) ---
-\sidebarsection{Personality}
-\traitbox{Traits}{15-year veteran of large-scale distributed systems.
-Founding engineer to CTO at Phaselaw. Senior Staff engineer at Reddit (500M+
-monthly users): ran data engineering and search infrastructure---a
-multi-billion-document Solr/Lucene index and a 5M+ messages/sec Kafka
-backbone---and built the real-time comment indexing technology whose
-retrieval systems later served Reddit's LLM products. Inventor on US Patent
-10,068,250.}
-\traitbox{Ideals}{Do the simple thing that works. Boring technology,
-deployed carefully, measured honestly.}
-\traitbox{Bonds}{Drawn to small, high-trust teams where rigor
-serves a mission.}
-\traitbox{Flaws}{Physically incapable of walking past a flaky test.}
-\vfill
-
-% --- Proficiencies ---
-\sidebarsection{Proficiencies}
-{\fontsize{7.5pt}{9.5pt}\selectfont%
-{\dndbold\color{dndred}Languages}\\
-Python \textbullet{} Scala \textbullet{} C++ \textbullet{} C\\
-Java \textbullet{} Clojure \textbullet{} Shell \textbullet{} SQL\\[1pt]
-{\dndbold\color{dndred}Data \& Infrastructure}\\
-Kafka \textbullet{} Flink \textbullet{} Solr \textbullet{} Lucene\\
-BigQuery \textbullet{} ZeroMQ \textbullet{} HAProxy\\
-AWS \textbullet{} Docker \textbullet{} Kubernetes\\
-Terraform \textbullet{} Temporal \textbullet{} ArgoCD\\
-GenAI/LLM pipelines\\[1pt]
-{\dndbold\color{dndred}Familiar}\\
-JavaScript \textbullet{} CSS \textbullet{} PHP\par}
-\vfill
-
-% --- Backstory (Education) ---
-\sidebarsection{Backstory}
-{\fontsize{7.5pt}{9.5pt}\selectfont%
-{\dndbold Cornell University}\\% chktex 1
-BS in ECE, 2008--2012\\[1pt]
-McMullen Dean Scholar\\
-Goldfarb Tradition Fellow\\
-Slope Media VP of Prod.\\
-Nanosat 6 Power Subsystem\\
-Cornell FSAE\par}
-\vfill
-
-% --- Sending Stones (Links) ---
-\sidebarsection{Sending Stones}
-{\fontsize{7pt}{9pt}\selectfont%
-\href{https://github.com/paulkiernan}{github/paulkiernan}\\
-\href{https://www.linkedin.com/in/paulynomial}{linkedin/paulynomial}
-\textbullet{} \href{https://twitter.com/gaelic}{@gaelic}\par}
-
-\end{minipage}
-
-\drawsidebar%
+% ===== EDUCATION & PATENTS =====
+\resumesection{Education \& Patents}
+\skillrow{Education}{\textbf{Cornell University}, BS in Electrical \& Computer
+    Engineering, 2012. McMullen Dean Scholar; Goldfarb Tradition Fellow.}
+\skillrow{Patent}{\textbf{US 10,068,250}: ``System and method for
+    measuring mobile advertising and content by simulating mobile-device
+    usage.''} % chktex 38
 
 \end{document}
